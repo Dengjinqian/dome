@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <button >aaa</button>
+    <script>
+        window.onload=function(){
+            $("button").click(function(){
+                console.log("aaa")
+                $("button").prop('disabled')==true?$("button").prop('disabled',false):$("button").prop('disabled',true)
+            })
+            // $("button").prop('disabled')=!$("button").prop('disabled')
+            console.log($("button").prop('disabled'))
+
+            function tin(a,b,c){
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
+            tin.prototype.mmm = function(){
+                console.log(this)
+            }
+            var bn = new tin(1,2)
+            bn.mmm()
+
+            function Stu(uname,age) {
+                this.uname=uname;
+                this.age=age;
+                this.sing=function () {
+                    console.log('你好，我在唱歌');
+                }
+            }
+            Stu.prototype.dance=function () {
+                console.log('你好，我跳舞');
+                console.log(this);
+            };
+            var ming=new Stu('李明',20);
+            ming.dance();
+        }
+            
+        
+       
+    </script>
+</body>
+</html>

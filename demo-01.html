@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin-top: 100px;
+            margin-left: 40px;
+            width: 125px;
+            height: 125px;
+            background-color: cornflowerblue;
+            transition: width 2s,height 3s,transform 2s;
+            transition-delay: 0s;
+        }
+        /*transition第一个属性，控制横轴变化的时间，第二个纵轴变化的时间，第三个效果执行时间*/
+        /*transition-delay表示效果执行的延迟时间*/
+        P:hover{
+            width: 200px;
+            height: 200px;
+            transform:rotate(45deg);
+        }
+        /*hover鼠标悬停状态，rotate图像旋转效果*/
+        div{
+            margin-top: 100px;
+            margin-left: 40px;
+            width: 125px;
+            height: 125px;
+            background-color: cornflowerblue;
+            position: relative;
+            /*这里一定要改为相对布局，否则位置不能改变*/
+            animation: anim 5s infinite alternate;
+        }
+        /*animation：后anim表示这个动画的名字，后面是持续5s*/
+        /*infinite（无限的，无数的）alternate（交替的轮流的）合在一起：无限轮替*/
+        
+        @keyframes  anim{
+            0%{background-color: cornflowerblue;left: 0px;top: 0px}
+            25%{background:skyblue;left: 200px;top:0}
+            50%{background-color: deepskyblue;left: 200px;top: 200px}
+            75%{background-color: aqua;left: 0px;top: 200px}
+            100%{background-color:cornflowerblue;left: 0px;top: 0px}
+        }
+    </style>
+</head>
+<body>
+    <p>萌萌哒德鲁伊</p>
+    <div>萌萌哒德鲁伊</div><br/>
+</body>
+</html>

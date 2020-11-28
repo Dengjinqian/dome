@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mdui.css">
+    <link rel="stylesheet" href="./animate.min.css">
+    <style>
+        #rety{
+            height:calc(100vh - 70px);
+            /* border: 1px solid red; */
+            overflow: hidden;
+            margin: 10px 0px 0px 10px;
+        }
+        @media (min-width: 1024px){
+            .mdui-drawer-body-left {
+              padding-left:0px;
+            }
+            #rety{
+                float: right;
+                width:calc(100% - 240px);
+                /* border: 1px solid red; */
+                transition: all .3s;
+            }
+        }
+        @media (max-width: 840px){
+            .mdui-drawer {
+                -webkit-transform: translateX(-320px);
+                transform: translateX(-320px);
+                margin-top:0px !important;
+            }
+            #rety{
+                float: right;
+                width:100% !important;
+            }
+        }
+
+        .mdui-drawer{
+            /* position: initial; */
+        }
+        .eee{
+
+        }
+    </style>
+</head>
+<!-- <body class="mdui-drawer-body-left" style="padding-top: 20px;"> -->
+<body>
+    <div style="box-shadow: 5px 5px 10px #545c5e;height: 60px;">
+        <button id="open" class="mdui-btn mdui-color-pink-accent mdui-m-a-1">open</button>
+    </div>
+    <div>
+        <div class="mdui-drawer eee" id="drawer" style="border: 1px solid red;margin-top: 60px;">
+            <ul class="mdui-list" mdui-collapse="{accordion: true}">
+
+                <li class="mdui-list-item mdui-ripple">
+                   <div class="mdui-list-item-content">Home</div>
+                </li>
+            
+                <li class="mdui-list-item mdui-ripple">
+                  <div class="mdui-list-item-content">Dashboard</div>
+                </li>
+            
+                <li class="mdui-collapse-item mdui-collapse-item-open">
+                    <div class="mdui-list-item-content">Audience</div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <li class="mdui-list-item mdui-ripple">Overview</li>
+                        <li class="mdui-list-item mdui-ripple">Language</li>
+                        <li class="mdui-list-item mdui-ripple">Location</li>
+                        <li class="mdui-list-item mdui-ripple">New vs Returning</li>
+                    </ul>
+                </li>
+            
+                <li class="mdui-collapse-item">
+                    <div class="mdui-list-item-content">Acquisition</div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <li class="mdui-list-item mdui-ripple">Overview</li>
+                        <li class="mdui-list-item mdui-ripple">All Traffic</li>
+                        <li class="mdui-list-item mdui-ripple">Direct Traffic</li>
+                        <li class="mdui-list-item mdui-ripple">Search Overview</li>
+                    </ul>
+                </li>
+            
+                <li class="mdui-collapse-item">
+                    <div class="mdui-list-item-content">Behavior</div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    <li class="mdui-list-item mdui-ripple">Overview</li>
+                    <li class="mdui-list-item mdui-ripple">All Pages</li>
+                    <li class="mdui-list-item mdui-ripple">Landing Pages</li>
+                    <li class="mdui-list-item mdui-ripple">Exit Pages</li>
+                </ul>
+                </li>
+            
+                <li class="mdui-list-item mdui-ripple">
+                   <div class="mdui-list-item-content">Ecommerce</div>
+                </li>
+            
+            </ul>
+            <button id="toggle" class="mdui-btn mdui-color-pink-accent mdui-m-a-1">toggle</button>
+        </div>
+    </div>
+    
+    <div id="rety">
+        <div style="margin:12px 0px 0px 12px;">ffnnnnnnnnnnnnnnnnnnnnnnnnnnnnnf</div>
+    </div>  
+      <script src="./mdui.min.js"></script>
+      <script>
+          var inst = new mdui.Drawer('#drawer');
+
+          // method
+          function inon(){
+            if(document.querySelector("#rety").style.width=='99.9vw'){
+                    document.querySelector("#rety").style.width="calc(100vw - 250px)";
+                    console.log("xxx")
+                }else{
+                    document.querySelector("#rety").style.width=`99.9vw`
+                    console.log("yyy");
+                }
+          }
+          document.getElementById('open').addEventListener('click', function () {
+                inst.toggle();
+                inon()
+          });
+          document.getElementById('toggle').addEventListener('click', function () {
+            inst.toggle();console.log("ccc")
+            inon()
+          });
+         var arr=[{name:"Heom",id:100,child:[{name:"aaa",id:111}]},{name:"Heom",id:100}];
+         var str = "";
+         for(var i = 0; i<arr.length;i++){
+            
+         }       
+      </script>
+</body>
+</html>
